@@ -12,12 +12,13 @@ input.onButtonPressed(Button.AB, function () {
         basic.showIcon(IconNames.Yes)
         basic.pause(100)
         basic.clearScreen()
+        ENTRY = ""
     } else {
         basic.showIcon(IconNames.No)
         basic.pause(500)
         basic.clearScreen()
+        ENTRY = ""
     }
-    basic.pause(100)
 })
 // al presionar el boton B, es lo mismo que el boton A, se detecta como digito de la contraseña
 input.onButtonPressed(Button.B, function () {
