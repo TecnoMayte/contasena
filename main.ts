@@ -5,21 +5,20 @@ enum RadioMessage {
 input.onButtonPressed(Button.A, function () {
     código = "" + código + "A"
 })
-// al presionar A+B, se introduce la contraseña, una vez marcada con A y B, si es correcta se muestra un tick y si es incorrecta una X, si es 3 veces incorrecta se bloquea y sueno un timbre de emergencia.
 input.onButtonPressed(Button.AB, function () {
-    if (password == código) {
+    if (código == password) {
         basic.showIcon(IconNames.Yes)
         basic.pause(100)
         basic.clearScreen()
         código = ""
     } else {
         basic.showIcon(IconNames.No)
-        basic.pause(500)
         basic.clearScreen()
-        código = ""
         contador += 1
         if (contador == 3) {
-            basic.showString("SOCORRO")
+            basic.showString("ALARMA")
+            código = ""
+            contador = 0
         }
     }
 })
